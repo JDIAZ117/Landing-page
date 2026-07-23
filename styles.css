@@ -1,0 +1,225 @@
+/* Variables de color de la paleta minimalista y sobria */
+:root {
+  --fondo-oscuro: #0a0a0a;
+  --texto-plateado: #cccccc;
+  --dorado: #d4af37;
+  --dorado-claro: #f3e5ab;
+  --blanco: #ffffff;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+  background-color: var(--fondo-oscuro);
+  color: var(--texto-plateado);
+  text-align: center;
+}
+
+section {
+  padding: 10px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* --- SLIDE 1: ENCABEZADO --- */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+}
+
+.logo-principal {
+  max-width: 650px;
+  width: 100%;
+  object-fit: contain;
+  margin-bottom: 5px;
+}
+
+.titulo-rpm {
+  font-weight: 900;
+  font-size: 5rem;
+  margin: 0;
+  text-transform: uppercase;
+  /* Efecto perlado brillante en 135 grados */
+  background: linear-gradient(
+    135deg,
+    #ffffff 0%,
+    var(--blanco) 20%,
+    var(--dorado) 50%,
+    var(--dorado-claro) 80%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 2px;
+}
+
+.eslogan {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--texto-plateado);
+  margin-top: 10px;
+  letter-spacing: 1px;
+}
+
+/* --- SLIDE 2: VIDEO --- */
+.video-section h2 {
+  font-size: 2.5rem;
+  color: var(--blanco);
+  margin-bottom: 40px;
+}
+
+.video-container {
+  max-width: 800px;
+  margin: 0 auto 40px auto;
+  background-color: #1a1a1a;
+  border: 2px solid rgba(212, 175, 55, 0.3);
+  border-radius: 8px;
+  padding: 20px;
+  aspect-ratio: 16 / 9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.video-placeholder {
+  color: #666;
+  font-size: 1.2rem;
+}
+
+.btn-dorado {
+  display: inline-block;
+  padding: 15px 40px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: var(--dorado);
+  background-color: transparent;
+  border: 2px solid var(--dorado);
+  border-radius: 4px;
+  cursor: pointer;
+  /* Transición instantánea solicitada */
+  transition: all 0s;
+}
+
+.btn-dorado:hover {
+  background-color: var(--dorado);
+  color: #000000;
+}
+
+/* --- SLIDE 3: TRES PILARES --- */
+.pilares-section h2 {
+  font-size: 2.5rem;
+  color: var(--blanco);
+  margin-bottom: 50px;
+}
+
+.grid-pilares {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.pilar {
+  background-color: #111;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.pilar img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  filter: grayscale(30%) contrast(1.1); /* Estilo sobrio */
+}
+
+.pilar h3 {
+  color: var(--dorado);
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.pilar p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* --- SLIDE 4: FOOTER Y REDES --- */
+.footer {
+  padding: 60px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #050505;
+}
+
+.logo-footer {
+  max-width: 150px;
+  margin-bottom: 30px;
+}
+
+.redes-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn-social {
+  display: inline-block;
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--texto-plateado);
+  background-color: #000000;
+  border: 1px solid var(--texto-plateado);
+  border-radius: 4px;
+  /* Transición instantánea solicitada */
+  transition: all 0s;
+}
+
+/* Hover de WhatsApp: de negro a verde */
+.btn-social.wa:hover {
+  background-color: #25d366;
+  color: #ffffff;
+  border-color: #25d366;
+}
+
+/* Hover de Facebook: de negro a azul */
+.btn-social.fb:hover {
+  background-color: #1877f2;
+  color: #ffffff;
+  border-color: #1877f2;
+}
+
+/* Hover de Instagram: de negro a degradado cálido */
+.btn-social.ig:hover {
+  background: linear-gradient(
+    90deg,
+    #f09433 0%,
+    #e6683c 25%,
+    #dc2743 50%,
+    #cc2366 75%,
+    #bc1888 100%
+  );
+  color: #ffffff;
+  border-color: transparent;
+}
+
+/* Responsivo para móviles */
+@media (max-width: 768px) {
+  .titulo-rpm {
+    font-size: 3rem;
+  }
+  .video-container {
+    aspect-ratio: 4 / 3;
+  }
+}
