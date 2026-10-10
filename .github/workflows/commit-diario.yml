@@ -1,0 +1,26 @@
+name: Commit Diario Auto
+
+on:
+  schedule:
+    # Se ejecuta todos los días a las 10:00 UTC (5:00 AM hora de Colombia)
+    - cron: "0 10 * * *"
+  workflow_dispatch: # Permite ejecutarlo manualmente con un botón para probarlo
+
+jobs:
+  commit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar el repositorio
+        uses: actions/checkout@v4
+
+      - name: Actualizar el contador
+        run: |
+          echo "Commit automático generado el: $(date)" >> contador.txt
+
+      - name: Hacer el commit y subir los cambios (Push)
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add contador.txt
+          git commit -m "chore: actualiza contador diario"
+          git push
