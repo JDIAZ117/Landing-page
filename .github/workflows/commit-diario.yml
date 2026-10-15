@@ -19,8 +19,8 @@ jobs:
 
       - name: Hacer el commit y subir los cambios (Push)
         run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "JDIAZ117"
+          git config --global user.email "jppena555@gmail.com" 
           git add contador.txt
           git commit -m "chore: actualiza contador diario"
           git push
